@@ -14,6 +14,7 @@ public class Vuelo {
         this.numero = numero;
 
     }
+    
 
     public String getOrigen(){
         return origen;
