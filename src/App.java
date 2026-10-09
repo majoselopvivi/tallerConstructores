@@ -1,101 +1,56 @@
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
+        // Ejercicio Libro
         Libro libro1 = new Libro();
-        Libro libro2 = new Libro();
+        Libro libro2 = new Libro("El Principito", "Antoine de Saint-Exupery");
+        Libro libro3 = new Libro("Cien años de soledad", "Gabriel Garcia Marquez", false);
 
-        libro1.setTitulo("El Principito");
-        libro1.setAutor("Antoine de Saint-Exupery");
-        libro1.setDisponible(true);
-
-        libro2.setTitulo("Cien añoss de soledad");
-        libro2.setAutor("Gabriel Garcia Marquez");
-        libro2.setDisponible(true);
-
-        System.out.println("LIBRO 1: ");
+        System.out.println("\nLibro 1:");
         libro1.mostrarInfo();
-        System.out.println("LIBRO 2: ");
+        System.out.println("\nLibro 2:");
         libro2.mostrarInfo();
-
-        System.out.println("\nPRESTAR LIBRO 1");
-        libro1.prestar();
-        System.out.println("\nPRESTAR LIBRO 2");
+        System.out.println("\nLibro 3:");
+        libro3.mostrarInfo();
+        System.out.println("\nPrueba de prestar y devolver:");
         libro2.prestar();
-
-        System.out.println("\nDEVOLVER LIBRO 1");
-        libro1.devolver();
-        System.out.println("\nDEVOLVER LIBRO 2");
         libro2.devolver();
 
 
+        // Ejercicio Vuelo
+        Vuelo vuelo1 = new Vuelo();
+        Vuelo vuelo2 = new Vuelo("AV9401", "Bogota", "Medellin");
+        Vuelo vuelo3 = new Vuelo("AV9402", "Cali", "Bogota", 80, 100);
 
-    //CLASE VUELO
+        System.out.println("\nVuelo 1:");
+        vuelo1.mostrarInfo();
+        System.out.println("\nVuelo 2:");
+        vuelo2.mostrarInfo();
+        System.out.println("\nVuelo 3:");
+        vuelo3.mostrarInfo();
+        System.out.println("\nEmbarcar 10 pasajeros en el vuelo 3:");
+        vuelo3.embarcar(10);
+        vuelo3.mostrarInfo();
+        System.out.println("\nDesembarcar 25 pasajeros del vuelo 3:");
+        vuelo3.desembarcar(25);
+        vuelo3.mostrarInfo();
 
-        Vuelo v1 = new Vuelo();
-        Vuelo v2 = new Vuelo();
 
-        v1.setNumero("AV9401");
-        v1.setOrigen("Bogota");
-        v1.setDestino("Medellin");
-        v1.setCapacidadMaxima(100);
-        v1.setOcupacion(50);
+        // Ejercicio Deposito de agua
+        DepositoAgua deposito1 = new DepositoAgua(100, 80);
+        DepositoAgua deposito2 = new DepositoAgua(50, 10);
 
-        v2.setNumero("AV9402");
-        v2.setOrigen("Cali");
-        v2.setDestino("Bogota");
-        v2.setCapacidadMaxima(100);
-        v2.setOcupacion(80);
+        deposito1.setDepositoDesborde(deposito2);
 
-        System.out.println("\nVUELO 1: ");
-        v1.mostrarInfo();
-        System.out.println("\nVUELO 2: ");
-        v2.mostrarInfo();
-
-        System.out.println("\nEmbarcacion Vuelo 1");
-        v1.embarcar(20);
-        System.out.println("\nEmbarcacion Vuelo 2");
-        v2.embarcar(10);
-
-        System.out.println("\nVUELO 1: ");
-        v1.desembarcar(40);
-        System.out.println("\nVUELO 2: ");
-        v2.desembarcar(80);
-
-        //CLASE DEPOSITO DE AGUA
-
-        DepositoAgua deposito1 = new DepositoAgua();
-        DepositoAgua deposito2 = new DepositoAgua();
-
-        deposito1.setCapacidad(100);
-        deposito1.setVolumenActual(80);
-
-        deposito2.setCapacidad(50);
-        deposito2.setVolumenActual(10);
-
-        deposito1.depositoDesborde(deposito2);
-
-        System.out.println("\nDEPOSITO 1: ");
+        System.out.println("\nDeposito 1 antes de agregar agua:");
         deposito1.mostrarEstado();
-
-        System.out.println("\nDEPOSITO 2: ");
+        System.out.println("\nDeposito 2 antes de agregar agua:");
         deposito2.mostrarEstado();
-
-        System.out.println("\nAGREGAR AGUA DEPOSITO 1");
+        System.out.println("\nAgregar 40 litros al deposito 1:");
         deposito1.agregarAgua(40);
-
-        System.out.println("\nDEPOSITO 1: ");
+        System.out.println("\nDeposito 1 despues del desborde:");
         deposito1.mostrarEstado();
-
-        System.out.println("\nDEPOSITO 2: ");
+        System.out.println("\nDeposito 2 despues de recibir el sobrante:");
         deposito2.mostrarEstado();
-
-        System.out.println("\nQUITAR AGUA DEPOSITO 1");
-        deposito1.quitarAgua(30);
-
-        System.out.println("\nDEPOSITO 1: ");
-        deposito1.mostrarEstado();
-
-
     }
-
 }

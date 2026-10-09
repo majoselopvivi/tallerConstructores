@@ -5,6 +5,24 @@ public class Vuelo {
     private int ocupacion;
     private int capacidadMaxima;
 
+    public Vuelo(){
+    }
+
+    public Vuelo(String numero, String origen, String destino){
+        this.numero = numero;
+        this.origen = origen;
+        this.destino = destino;
+        this.ocupacion = 0;
+    }
+
+    public Vuelo(String numero, String origen, String destino, 
+        int ocupacion, int capacidadMaxima){
+            this.numero = numero;
+            this.origen = origen;
+            this.destino = destino;
+            this.ocupacion = ocupacion;
+            this.capacidadMaxima= capacidadMaxima;
+        }
 
     public String getNumero(){
         return numero;
@@ -45,7 +63,7 @@ public class Vuelo {
             System.out.println("La ocupacion no es valida.");
         }
     
-}
+    }
     public int getCapacidadMaxima(){
         return capacidadMaxima;
     }
@@ -59,7 +77,7 @@ public class Vuelo {
         System.out.println("Ciudad de origen: " + origen);
         System.out.println("Ciudad de destino: " + destino);
         System.out.println("Numero de pasajeros a bordo: " + ocupacion);
-        System.out.println("Maximo de pasjeros permitidos: " + capacidadMaxima);
+        System.out.println("Maximo de pasajeros permitidos: " + capacidadMaxima);
     }
 
     public void embarcar(int pasajeros){
@@ -81,6 +99,5 @@ public class Vuelo {
             System.out.println("se han desembarcado todos los pasajeros");
         }
     }
-
 
 }
